@@ -1,0 +1,14 @@
+[package]
+name = "zephyr_lend"
+version = "0.1.0"
+authors = ["ZengLLQ"]
+
+[addresses]
+zephyr_lend = "0xBEEF"
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-framework.git"
+rev = "aptos-release-v1.16"
+subdir = "aptos-framework"
+
+[dev-dependencies]

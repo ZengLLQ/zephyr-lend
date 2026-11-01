@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Aptos CLI
+        run: |
+          curl -fsSL "https://aptos.dev/scripts/install_cli.py" | python3
+          echo "$HOME/.aptoscli/bin" >> $GITHUB_PATH
+
+      - name: Run Move Unit Tests
+        run: |
+          aptos move test
